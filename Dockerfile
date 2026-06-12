@@ -37,6 +37,9 @@ RUN if [ -f package-lock.json ]; then npm ci --only=production; else npm install
 # Copy compiled resources from builder stage
 COPY --from=builder /app/dist ./dist
 
+# Copy original spelling lists from builder as a robust, non-volatile template for empty volume mounts
+COPY --from=builder /app/data /app/data-template
+
 # Create persistent storage folder for JSON storage database file
 RUN mkdir -p /app/data
 

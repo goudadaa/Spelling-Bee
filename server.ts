@@ -87,8 +87,19 @@ function loadDatabase(): AppData {
       fs.mkdirSync(DB_DIR, { recursive: true });
     }
     if (!fs.existsSync(DB_PATH)) {
-      fs.writeFileSync(DB_PATH, JSON.stringify(DEFAULT_DATA, null, 2), "utf-8");
-      return DEFAULT_DATA;
+      const templatePath = path.join(process.cwd(), "data-template", "spellings.json");
+      const localTemplatePath = path.join(process.cwd(), "data", "spellings.json");
+      
+      if (fs.existsSync(templatePath)) {
+        console.log("Seeding database from pre-populated Docker template...");
+        fs.copyFileSync(templatePath, DB_PATH);
+      } else if (fs.existsSync(localTemplatePath) && localTemplatePath !== DB_PATH) {
+        console.log("Seeding database from workspace template...");
+        fs.copyFileSync(localTemplatePath, DB_PATH);
+      } else {
+        console.log("No seed templates found. Auto-generating fresh default data...");
+        fs.writeFileSync(DB_PATH, JSON.stringify(DEFAULT_DATA, null, 2), "utf-8");
+      }
     }
     const content = fs.readFileSync(DB_PATH, "utf-8");
     const data = JSON.parse(content) as AppData;
