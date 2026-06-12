@@ -1,0 +1,6 @@
+{
+  "name": "Practice Spellings App",
+  "description": "An engaging, gamified application for children to learn and practice spelling words with text-to-speech support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

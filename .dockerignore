@@ -1,0 +1,15 @@
+# Exclude local dependency folder (preventing platform conflicts inside docker)
+node_modules
+npm-debug.log
+
+# Exclude final build outputs to force fresh compiling in docker
+dist
+build
+
+# Exclude secrets and configurations
+.env
+.env.*
+.git
+.github
+.DS_Store
+Thumbs.db

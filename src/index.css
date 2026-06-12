@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-natural-bg: #FDFBF7;
+  --color-natural-text: #4F4A45;
+  --color-natural-title: #5C534B;
+  --color-natural-sage: #99AC8B;
+  --color-natural-terracotta: #D98C77;
+  --color-natural-cream: #EFE9DF;
+  --color-natural-border: #EAE2D6;
+  --color-natural-darkcream: #E0D8CC;
+  --color-natural-sand: #F7F2EB;
+  --color-natural-light: #F9F6F1;
+  --color-natural-khaki: #A69E94;
+  --color-natural-warmgray: #8C8479;
+}
+
+/* Custom whimsical cartoon style keyframe animations and utility classes */
+@keyframes bouncer {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-bouncer {
+  animation: bouncer 1.8s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s infinite linear;
+}
+

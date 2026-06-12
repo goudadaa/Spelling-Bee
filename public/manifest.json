@@ -1,0 +1,27 @@
+{
+  "name": "Spelling Bee Wizard",
+  "short_name": "Spelling Bee",
+  "description": "Fun interactive spelling practice and spelling bee games with real-time spoken guidance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF9F4",
+  "theme_color": "#768672",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["education", "games"],
+  "id": "/?source=pwa",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

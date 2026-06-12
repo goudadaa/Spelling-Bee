@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Definition for drop shadow filters and clip paths -->
+  <defs>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#4A5348" flood-opacity="0.18" />
+    </filter>
+    <clipPath id="bee-body">
+      <ellipse cx="256" cy="276" rx="90" ry="76" />
+    </clipPath>
+  </defs>
+
+  <!-- Ground circle base matching Sage Green and Cream design system -->
+  <circle cx="256" cy="256" r="236" fill="#FBF9F4" stroke="#768672" stroke-width="16" />
+  <circle cx="256" cy="256" r="216" fill="#F0EAE1" />
+
+  <!-- The smiling wizard bee container (applying soft shadow filter) -->
+  <g filter="url(#soft-shadow)">
+    <!-- Stinger -->
+    <path d="M340 286 L376 296 L338 314 Z" fill="#2C2C2C" stroke="#2C2C2C" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Wings (back and front layer for dimension) -->
+    <!-- Left Wing -->
+    <g transform="translate(200, 185) rotate(-35)">
+      <ellipse cx="0" cy="0" rx="35" ry="60" fill="#FFFFFF" fill-opacity="0.95" stroke="#768672" stroke-width="8" />
+      <path d="M-10 -25 Q0 10 10 -25" fill="none" stroke="#A7B5A3" stroke-width="4" stroke-linecap="round" />
+    </g>
+    <!-- Right Wing -->
+    <g transform="translate(312, 185) rotate(35)">
+      <ellipse cx="0" cy="0" rx="35" ry="60" fill="#FFFFFF" fill-opacity="0.95" stroke="#768672" stroke-width="8" />
+      <path d="M-10 -25 Q0 10 10 -25" fill="none" stroke="#A7B5A3" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    <!-- Antennae -->
+    <!-- Left Antenna -->
+    <path d="M224 196 Q200 156 186 172" fill="none" stroke="#2C2C2C" stroke-width="8" stroke-linecap="round" />
+    <circle cx="186" cy="172" r="12" fill="#768672" stroke="#2C2C2C" stroke-width="4" />
+    <!-- Right Antenna -->
+    <path d="M288 196 Q312 156 326 172" fill="none" stroke="#2C2C2C" stroke-width="8" stroke-linecap="round" />
+    <circle cx="326" cy="172" r="12" fill="#768672" stroke="#2C2C2C" stroke-width="4" />
+
+    <!-- Bee Plump Body Base -->
+    <ellipse cx="256" cy="276" rx="90" ry="76" fill="#FFD043" stroke="#2C2C2C" stroke-width="10" />
+
+    <!-- Clipped stripes -->
+    <g clip-path="url(#bee-body)">
+      <!-- Black stripes across the tummy -->
+      <path d="M232 180 L212 370 L242 370 L262 180 Z" fill="#2C2C2C" />
+      <path d="M286 180 L266 370 L296 370 L316 180 Z" fill="#2C2C2C" />
+    </g>
+    
+    <!-- Re-render body border to overlap stripe edges cleanly -->
+    <ellipse cx="256" cy="276" rx="90" ry="76" fill="none" stroke="#2C2C2C" stroke-width="10" />
+
+    <!-- Adorable Face Details -->
+    <!-- Kawaii Eyes -->
+    <!-- Left Eye -->
+    <circle cx="216" cy="260" r="12" fill="#2C2C2C" />
+    <circle cx="212" cy="256" r="4" fill="#FFFFFF" />
+    <!-- Right Eye -->
+    <circle cx="296" cy="260" r="12" fill="#2C2C2C" />
+    <circle cx="292" cy="256" r="4" fill="#FFFFFF" />
+
+    <!-- Smiling Mouth -->
+    <path d="M246 280 Q256 292 266 280" fill="none" stroke="#2C2C2C" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Rosy Cheek Blushes -->
+    <ellipse cx="192" cy="272" rx="12" ry="7" fill="#FF8D9D" fill-opacity="0.75" />
+    <ellipse cx="320" cy="272" rx="12" ry="7" fill="#FF8D9D" fill-opacity="0.75" />
+
+    <!-- Little Golden King / Queen Crown of Spelling bee champion -->
+    <path d="M232 196 L240 172 L256 186 L272 172 L280 196 Z" fill="#FFC107" stroke="#2C2C2C" stroke-width="5" stroke-linejoin="round" />
+    <circle cx="240" cy="172" r="5" fill="#E0A800" stroke="#2C2C2C" stroke-width="2" />
+    <circle cx="256" cy="186" r="5" fill="#E0A800" stroke="#2C2C2C" stroke-width="2" />
+    <circle cx="272" cy="172" r="5" fill="#E0A800" stroke="#2C2C2C" stroke-width="2" />
+
+    <!-- Spelling magic wand held by the bee -->
+    <g transform="translate(176, 310) rotate(-15)">
+      <!-- Wand Stick -->
+      <line x1="0" y1="0" x2="-25" y2="25" stroke="#768672" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="0" x2="-25" y2="25" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" />
+      <!-- Magical Glowing Star -->
+      <g transform="translate(6, -6) scale(1.1)">
+        <polygon points="0,-14 4,-4 14,-4 6,2 9,12 0,6 -9,12 -6,2 -14,-4 -4,-4" fill="#FFD043" stroke="#2C2C2C" stroke-width="3" stroke-linejoin="round" />
+        <!-- Glitter Sparkles -->
+        <circle cx="-14" cy="8" r="2.5" fill="#FFD043" />
+        <circle cx="16" cy="-10" r="2" fill="#FFD043" />
+        <circle cx="-2" cy="-20" r="1.5" fill="#FFD043" />
+      </g>
+    </g>
+  </g>
+</svg>
